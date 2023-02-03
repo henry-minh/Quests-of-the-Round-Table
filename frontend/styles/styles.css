@@ -1,0 +1,282 @@
+:root {
+	--bg: #3c465c;
+	--primary: #78ffcd;
+	--solid: #fff;
+	--btn-w: 10em;
+	--dot-w: calc(var(--btn-w) * 0.2);
+	--tr-X: calc(var(--btn-w) - var(--dot-w));
+
+	--btn-yes-w: 5em;
+    --yesDot-w: calc(var(--btn-yes-w) * 0.4);
+    --tr-yesX: calc(var(--btn-yes-w) - var(--yesDot-w));
+
+    --btn-no-w: 5em;
+    --noDot-w: calc(var(--btn-no-w) * 0.4);
+    --tr-noX: calc(var(--btn-no-w) - var(--noDot-w));
+}
+* {
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.notiText{
+    color: #78ffcd;
+}
+
+.body{
+    align-items: start;
+    background-color: var(--bg);
+
+}
+body{
+    color: var(--primary);
+}
+h2{
+    color: var(--primary);
+}
+html{
+    background: var(--bg);
+    text-color: #78ffcd;
+}
+
+
+.PromptDiv{
+    position: relative;
+    background: grey;
+    margin: 2;
+    width: 20em;
+    height: 10em;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.promptSpan{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    line-height: 2em;
+    position: relative;
+    display: block;
+}
+
+.promptWinnersSpan{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    position: relative;
+    display: block;
+}
+
+.yesBtn{
+    position: absolute;
+    background: green;
+    left: 20px;
+    bottom: 10px;
+    margin: 0 auto;
+    width: var(--btn-yes-w);
+    color: white;
+    border: 0.15em solid white;
+    border-radius: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+.noBtn{
+    position: absolute;
+    background: red;
+    right: 20px;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 5em;
+    color: black;
+    border: 0.15em solid black;
+    border-radius: 5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+
+.yesBtn:hover .yesDot,
+.yesBtn:focus .yesDot {
+	animation: yesAtom 2s infinite linear;
+	display: block;
+}
+.noBtn:hover .noDot,
+.noBtn:focus .noDot {
+	animation: noAtom 2s infinite linear;
+	display: block;
+}
+.yesDot {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: var(--yesDot-w);
+	height: 100%;
+	border-radius: 100%;
+	transition: all 300ms ease;
+	display: none;
+}
+.yesDot:after {
+	content: "";
+	position: absolute;
+	left: calc(50% - 0.4em);
+	top: -0.4em;
+	height: 0.8em;
+	width: 0.8em;
+	background: green;
+	border-radius: 1em;
+	border: 0.25em solid var(--solid);
+	box-shadow: 0 0 0.7em var(--solid), 0 0 2em var(--primary);
+}
+.noDot {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: var(--noDot-w);
+	height: 100%;
+	border-radius: 100%;
+	transition: all 300ms ease;
+	display: none;
+}
+.noDot:after {
+	content: "";
+	position: absolute;
+	left: calc(50% - 0.4em);
+	top: -0.4em;
+	height: 0.8em;
+	width: 0.8em;
+	background: red;
+	border-radius: 1em;
+	border: 0.25em solid black;
+	box-shadow: 0 0 0.7em black, 0 0 2em black;
+}
+
+
+@keyframes noAtom {
+	0% {
+		transform: translateX(0) rotate(0);
+	}
+	30% {
+		transform: translateX(var(--tr-noX)) rotate(0);
+	}
+	50% {
+		transform: translateX(var(--tr-noX)) rotate(180deg);
+	}
+	80% {
+		transform: translateX(0) rotate(180deg);
+	}
+	100% {
+		transform: translateX(0) rotate(360deg);
+	}
+}
+@keyframes yesAtom {
+	0% {
+		transform: translateX(0) rotate(0);
+	}
+	30% {
+		transform: translateX(var(--tr-yesX)) rotate(0);
+	}
+	50% {
+		transform: translateX(var(--tr-yesX)) rotate(180deg);
+	}
+	80% {
+		transform: translateX(0) rotate(180deg);
+	}
+	100% {
+		transform: translateX(0) rotate(360deg);
+	}
+}
+
+.btn {
+	position: relative;
+	margin: 0 auto;
+	width: var(--btn-w);
+	color: var(--primary);
+	border: 0.15em solid var(--primary);
+	border-radius: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	cursor: pointer;
+}
+.dot {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: var(--dot-w);
+	height: 100%;
+	border-radius: 100%;
+	transition: all 300ms ease;
+	display: none;
+}
+.dot:after {
+	content: "";
+	position: absolute;
+	left: calc(50% - 0.4em);
+	top: -0.4em;
+	height: 0.8em;
+	width: 0.8em;
+	background: var(--primary);
+	border-radius: 1em;
+	border: 0.25em solid var(--solid);
+	box-shadow: 0 0 0.7em var(--solid), 0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+	animation: atom 2s infinite linear;
+	display: block;
+}
+@keyframes atom {
+	0% {
+		transform: translateX(0) rotate(0);
+	}
+	30% {
+		transform: translateX(var(--tr-X)) rotate(0);
+	}
+	50% {
+		transform: translateX(var(--tr-X)) rotate(180deg);
+	}
+	80% {
+		transform: translateX(0) rotate(180deg);
+	}
+	100% {
+		transform: translateX(0) rotate(360deg);
+	}
+}
+
+.boardDimension{
+    height: 600px;
+    width: 1920px;
+}
+
+.deckHover{
+    border: 2px solid black;
+}
+
+.cardHover:hover{
+    border: 2px solid black;
+}
+
+.adventureDeck:hover{
+border: 2px solid black;
+}
+.adventureDiscard:hover{
+border: 2px solid black;
+}
+.storyDeck:hover{
+border: 2px solid black;
+}
+.storyDiscard:hover{
+border: 2px solid black;
+}
+
