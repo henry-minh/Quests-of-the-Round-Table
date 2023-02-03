@@ -2,18 +2,11 @@ FullStack Multiplayer Card Game Web Application: Quests Of The Round Table
 Carleton University Winter 2021 - COMP 3004 Object-Oriented Software Engineering
 Contributers: Chris Boyd, Tristan Demers, Henry Nguyen, Brandon Atkins
 
-Tech Stack:
-	- Java
-	- Vaadin
-	- Maven
-	- Spring Boot
-	- Jira
+Tech Stack: Java, Vaadin, Maven, Spring Boot, Jira
 
-Back-End Design Patterns:
-	- Mediator Pattern
-	- Factory Pattern
-	- Strategy Pattern
-	- Observer Pattern
+Back-End Design Patterns: Mediator Pattern, Factory Pattern, Strategy Pattern, Observer Pattern
+
+Relevent Code can be found in: /src/main/java/org/vaadin/
 
 How to use program:
 
