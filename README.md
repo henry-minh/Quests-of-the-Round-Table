@@ -1,5 +1,7 @@
 FullStack Multiplayer Card Game Web Application: Quests Of The Round Table
+
 Carleton University Winter 2021 - COMP 3004 Object-Oriented Software Engineering
+
 Contributers: Chris Boyd, Tristan Demers, Henry Nguyen, Brandon Atkins
 
 Tech Stack: Java, Vaadin, Maven, Spring Boot, Jira
